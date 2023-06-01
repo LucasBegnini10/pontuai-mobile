@@ -1,5 +1,12 @@
 # PontuaAi Mobile
 
+
+## Introdução
+O documento proposto oferece soluções para maior alcance e fidelização de clientes para o comércio, através de um aplicativo de pontos. A ideia central é disponibilizar ao cliente recompensas em pontos pela compra no comércio, estes pontos que podem ser acumulados e trocados por prêmios cadastrados pelo próprio comércio. O administrador receberá um acesso com permissão de adicionar outros administradores, cadastrar produtos, editá-los, pontuar clientes e validar os vouchers recuperados pelo cliente.
+
+[Link do Propótipo](https://www.figma.com/file/E3S0avEeAedBKdnhS5Kdi9/Projeto-Final-Engenharia-de-Software?type=design&node-id=1-32&t=QMtMZWTonJQ6hJmm-0)
+
+
 ## Requisitos Funcionais 
 
 **[RF001] – Criação de contas**
