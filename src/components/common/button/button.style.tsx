@@ -24,10 +24,10 @@ export const MyButton = styled.TouchableOpacity`
 
 export const TextButton = styled.Text`
   text-transform: uppercase;
-  color: ${(props: any) => {
-    if (props.outline || props.secondary) return props.theme.primary;
-    return props.theme.white;
-  }};
+  color: ${(props: any) =>
+    props.outline || props.secondary
+      ? props.theme.primary
+      : props.theme.primary};
   font-family: "Nunito_500Medium";
   font-size: 18px;
 `;

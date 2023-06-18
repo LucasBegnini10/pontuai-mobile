@@ -1,11 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import Button from "./src/components/common/button/index";
+import Button from "./src/components/common/button/button";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/utils/theme";
 import loadFonts from "./src/helpers/fonts";
-import { useEffect, useState } from "react";
 
 export default function App() {
   if (!loadFonts()) return;

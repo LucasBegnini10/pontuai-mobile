@@ -1,11 +1,16 @@
 import React from "react";
-import { Loader, MyButton, TextButton } from "./style";
-import { PropsButton } from "./button.";
+import { Loader, MyButton, TextButton } from "./button.style";
+import { PropsButton } from "./button.type";
+import { render } from "@testing-library/react-native";
 
 export default function Button(props: PropsButton) {
   return (
     <MyButton {...props} onPress={props.onClick}>
-      {props.isLoading ? <Loader /> : <TextButton {...props}>Teste</TextButton>}
+      {props.isLoading ? (
+        <Loader />
+      ) : (
+        <TextButton {...props}>{props.title}</TextButton>
+      )}
     </MyButton>
   );
 }
