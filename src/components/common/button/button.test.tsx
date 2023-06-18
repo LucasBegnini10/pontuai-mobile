@@ -30,7 +30,7 @@ describe("<Button />", () => {
     expect(tree.children[0].type).toBe("Text");
   });
 
-  it("has render 1", async () => {
+  it("has render text Hello, World", async () => {
     const tree = renderer
       .create(<Button {...defaultProps} isLoading={false} />)
       .toJSON();
