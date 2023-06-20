@@ -1,10 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import Button from "./src/components/common/button/button";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/utils/theme";
 import loadFonts from "./src/helpers/fonts";
+import Input from "./src/components/common/input/input";
 
 export default function App() {
   if (!loadFonts()) return;
@@ -13,7 +13,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Button title="Clique aqui" onClick={() => null} />
+        <Input />
       </View>
     </ThemeProvider>
   );
@@ -25,5 +25,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    paddingHorizontal: 10,
   },
 });
