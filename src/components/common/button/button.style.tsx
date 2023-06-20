@@ -1,5 +1,7 @@
 import { ActivityIndicator } from "react-native";
 import { styled } from "styled-components/native";
+import { PropsButton } from "./button.type";
+import { theme } from "../../../utils/theme";
 
 export const MyButton = styled.TouchableOpacity`
   background-color: ${(props: any) => {
@@ -25,13 +27,14 @@ export const MyButton = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   text-transform: uppercase;
   color: ${(props: any) =>
-    props.outline || props.secondary
-      ? props.theme.primary
-      : props.theme.primary};
+    props.outline || props.secondary ? props.theme.primary : props.theme.white};
   font-family: "Nunito_500Medium";
   font-size: 18px;
 `;
 
-export const Loader = () => (
-  <ActivityIndicator size={"large"} color={"white"} />
+export const Loader = (props: PropsButton) => (
+  <ActivityIndicator
+    size={"large"}
+    color={props.outline || props.secondary ? theme.primary : theme.white}
+  />
 );
