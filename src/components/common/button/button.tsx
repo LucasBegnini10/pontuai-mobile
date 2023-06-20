@@ -5,7 +5,7 @@ import { render } from "@testing-library/react-native";
 
 export default function Button(props: PropsButton) {
   return (
-    <MyButton {...props} onPress={props.onClick}>
+    <MyButton {...props} onPress={props.onClick} testID="button">
       {props.isLoading ? (
         <Loader />
       ) : (

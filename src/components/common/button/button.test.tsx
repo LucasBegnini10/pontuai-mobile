@@ -1,5 +1,5 @@
 import React from "react";
-import { render } from "@testing-library/react-native";
+import { render, fireEvent } from "@testing-library/react-native";
 import Button from "./button";
 import renderer from "react-test-renderer";
 
@@ -9,7 +9,7 @@ const defaultProps = {
 };
 
 describe("<Button />", () => {
-  it("has 1 child", () => {
+  it("has 1 child component", () => {
     const tree = renderer.create(<Button {...defaultProps} />).toJSON();
     expect(tree.children.length).toBe(1);
   });
@@ -36,5 +36,18 @@ describe("<Button />", () => {
       .toJSON();
 
     expect(tree.children[0].children[0]).toBe("Hello, World!");
+  });
+
+  it("calls the onClick function when the button is clicked", () => {
+    const onClickMock = jest.fn();
+
+    const { getByTestId } = render(
+      <Button onClick={onClickMock} title="Hello, World!" />
+    );
+
+    const button = getByTestId("button");
+    fireEvent(button, "press");
+
+    expect(onClickMock).toHaveBeenCalled();
   });
 });
