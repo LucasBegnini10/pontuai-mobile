@@ -22,6 +22,7 @@ export default function Input(props: InputProps) {
       <Label>{props.label}</Label>
       <InputContainer isFocused={isFocused}>
         <MyInput
+          testID="input"
           value={props.value}
           onChangeText={props.onChangeText}
           onBlur={handleBlur}
