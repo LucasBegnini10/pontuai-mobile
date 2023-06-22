@@ -1,10 +1,11 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/utils/theme";
 import loadFonts from "./src/helpers/fonts";
 import Input from "./src/components/common/input/input";
+import { useState } from "react";
 
 export default function App() {
   if (!loadFonts()) return;
@@ -13,8 +14,7 @@ export default function App() {
     <ThemeProvider theme={theme}>
       <View style={styles.container}>
         <StatusBar style="auto" />
-        <Input />
-        <Input />
+        <Input label="E-mail" helperText="Preencha seu e-mail" />
       </View>
     </ThemeProvider>
   );
