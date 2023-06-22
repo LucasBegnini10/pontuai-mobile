@@ -19,12 +19,13 @@ export default function Input() {
   return (
     <Container>
       <Label>Preencha seu e-mail</Label>
-      <InputContainer>
-        <MyInput
-          isFocused={isFocused}
-          onBlur={handleBlur}
-          onFocus={handleFocus}
-        />
+      <InputContainer isFocused={isFocused}>
+        <MyInput onBlur={handleBlur} onFocus={handleFocus} />
+        <ViewIcon>
+          <TouchableOpacity>
+            <AntDesign name="eye" size={24} color="black" />
+          </TouchableOpacity>
+        </ViewIcon>
       </InputContainer>
       <Helper>Seu e-mail deve conter 30 caracteres</Helper>
     </Container>

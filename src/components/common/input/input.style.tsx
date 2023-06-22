@@ -11,19 +11,20 @@ export const Container = styled.View`
 export const InputContainer = styled.View`
   position: relative;
   width: 100%;
-`;
-
-export const MyInput = styled.TextInput`
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px 16px;
   background-color: ${(props: any) => props.theme.secondary};
-  border-width: 1px;
+  border-radius: 10px;
   border-color: ${(props: any) => {
     if (props.isError) return props.theme.error;
     if (props.isFocused) return props.theme.primary;
     return "transparent";
   }};
+  border-width: 1px;
+`;
+
+export const MyInput = styled.TextInput`
+  width: 88%;
+  border: none;
+  padding: 10px 16px;
 `;
 
 export const ViewIcon = styled.View`
