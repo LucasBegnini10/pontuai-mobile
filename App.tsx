@@ -1,31 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
 
 import { ThemeProvider } from "styled-components/native";
 import { theme } from "./src/utils/theme";
 import loadFonts from "./src/helpers/fonts";
-import Input from "./src/components/common/input/input";
-import { useState } from "react";
+import { SafeAreaView } from "react-native";
+import Login from "./src/screens/login";
 
 export default function App() {
   if (!loadFonts()) return;
 
   return (
     <ThemeProvider theme={theme}>
-      <View style={styles.container}>
-        <StatusBar style="auto" />
-        <Input label="E-mail" helperText="Preencha seu e-mail" />
-      </View>
+      <StatusBar style="auto" />
+      <SafeAreaView style={{ flex: 1, paddingVertical: 20 }}>
+        <Login />
+      </SafeAreaView>
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingHorizontal: 10,
-  },
-});
